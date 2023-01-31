@@ -1,0 +1,49 @@
+SELECT * FROM aluno WHERE matricula = 1
+
+SELECT * FROM aluno WHERE nome like '%A%'
+
+SELECT matricula, cpf FROM aluno WHERE nome like '%G%'
+
+SELECT * FROM aluno where cpf = 12345678945
+
+select * from aluno where matricula = 3
+select * from aluno where responsavel like '%a'
+select * from aluno where matricula > 1
+select * from aluno where matricula < 3
+select * from aluno where matricula >= 2
+select * from aluno where matricula <= 2
+select * from aluno where matricula <> 1
+select * from aluno where matricula != 2
+
+select * from aluno where matricula = 1 + 1
+select * from aluno where matricula = 2 - 1
+select * from aluno where matricula = 3 * 1
+select * from aluno where matricula = 2 / 1
+select * from aluno where matricula = 3 % 2
+select * from aluno where nome like 'J%' and matricula < 2
+select * from aluno where matricula > 1 or nome like 'j%'
+select * from aluno where matricula between 2 and 3
+select * from aluno where matricula not between 2 and 3
+select * from aluno where matricula in (1,2)
+select * from aluno where matricula is null
+select * from aluno where matricula is not null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
