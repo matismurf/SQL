@@ -51,9 +51,59 @@ SELECT * FROM funcionarios
 LEFT OUTER JOIN departamentos
 ON funcionarios.id_departamento = departamentos.id_dept
 
+SELECT * FROM professor
+ORDER BY cpf desc
 
+select * from aluno limit 2
 
+select * from funcionarios
+limit  4 offset 3
 
+select count(nome) from funcionarios
+
+select id_departamento,count(id_departamento) from funcionarios group by id_departamento
+
+select departamentos.descricao,count(funcionarios.id_departamento) 
+from funcionarios
+join departamentos
+on funcionarios.id_departamento = departamentos.id_dept
+group by departamentos.id_dept
+
+select departamentos.descricao,count(funcionarios.id_departamento) from funcionarios
+join departamentos
+on funcionarios.id_departamento = departamentos.id_dept
+group by departamentos.id_dept
+having count(funcionarios.id_departamento)>=2
+
+PARA CRIAR UM DATABASE, BASTA CRIAR UM ARQUIVO DE TEXTO E RENOMEAR PARA
+nomedobanco.sqlite
+
+create table alunos (
+	matricula INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT,
+  cpf INTEGER UNIQUE,
+  responsavel TEXT
+)
+
+CREATE TABLE professores(
+	id_professor INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT,
+  cpf INTEGER UNIQUE,
+  materia TEXT
+)
+
+CREATE TABLE aulas(
+	id_professor INTEGER,
+  matricula INTEGER,
+  FOREIGN KEY(id_professor) REFERENCES professores(id_professor),
+  FOREIGN KEY(matricula) REFERENCES alunos(matricula)
+)
+
+alter table aluno RENAME TO alunos
+alter table professor RENAME TO professores
+alter table aulas RENAME COLUMN id_aluno TO matricula_aluno
+
+drop table alunos
 
 
 
