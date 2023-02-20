@@ -28,6 +28,29 @@ select * from aluno where matricula in (1,2)
 select * from aluno where matricula is null
 select * from aluno where matricula is not null
 
+SELECT * FROM funcionarios
+JOIN departamentos
+ON departamentos.id_dept = funcionarios.id_departamento
+
+SELECT * FROM funcionarios
+JOIN departamentos
+ON funcionarios.id_departamento = departamentos.id_dept
+WHERE funcionarios.id_departamento = 2
+
+SELECT funcionarios.nome, funcionarios.cpf, departamentos.descricao
+FROM funcionarios
+JOIN departamentos
+ON funcionarios.id_departamento = departamentos.id_dept
+
+SELECT func.nome as 'Nome', func.cpf as 'CPF', dep.descricao as 'departamento'
+from funcionarios as func
+JOIN departamentos as dep
+ON func.id_departamento = dep.id_dept
+
+SELECT * FROM funcionarios
+LEFT OUTER JOIN departamentos
+ON funcionarios.id_departamento = departamentos.id_dept
+
 
 
 
